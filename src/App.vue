@@ -1,0 +1,30 @@
+<template>
+  <my-navbar></my-navbar>
+  <div class="p-3"></div>
+  <router-view></router-view>
+</template>
+
+<script>
+import MyNavbar from './components/UI/MyNavbar.vue';
+export default {
+  components: {
+    MyNavbar
+  },
+  //tryLogin in the vuex user store, ensures user is not logged out if page is refreshed
+  created() {
+    this.$store.dispatch('tryLogin');
+  },
+}
+</script>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #F1F1F1;
+}
+</style>
